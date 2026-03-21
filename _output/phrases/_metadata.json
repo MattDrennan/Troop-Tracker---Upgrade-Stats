@@ -1,0 +1,8 @@
+{
+    "api_scope.upgrades_read.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0",
+        "hash": "4901979c2199529063187ce271582544"
+    }
+}

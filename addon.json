@@ -1,0 +1,20 @@
+{
+    "legacy_addon_id": "",
+    "title": "Troop Tracker - Upgrade Stats API",
+    "description": "Exposes user upgrade stats via a custom API endpoint.",
+    "version_id": 1000010,
+    "version_string": "1.0.0",
+    "dev": "Matthew Drennan",
+    "dev_url": "",
+    "faq_url": "",
+    "support_url": "",
+    "extra_urls": [],
+    "require": {
+        "XF": [
+            2020000,
+            "XenForo 2.2.0+"
+        ]
+    },
+    "icon": "",
+    "ftp_url": ""
+}
