@@ -32,4 +32,27 @@ class UpgradeStats extends AbstractController
             'paymentLog'         => $payments,
         ]);
     }
+
+    public function actionGetuser(ParameterBag $params)
+    {
+        $this->assertApiScope('upgrades:read');
+
+        $userId = $this->filter('user_id', 'uint');
+        if (!$userId) {
+            return $this->error(\XF::phrase('upgradestats_user_id_required'), 400);
+        }
+
+        /** @var \UpgradeStats\Repository\UpgradeStats $repo */
+        $repo = $this->repository('UpgradeStats:UpgradeStats');
+
+        $stats   = $repo->getUserDonationStats($userId);
+        $records = $repo->getUserDonations($userId);
+
+        return $this->apiResult([
+            'user_id'        => $userId,
+            'months_donated' => $stats['months_donated'],
+            'total_donated'  => $stats['total_donated'],
+            'donations'      => $records,
+        ]);
+    }
 }
